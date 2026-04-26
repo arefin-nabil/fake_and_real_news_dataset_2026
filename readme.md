@@ -2,102 +2,56 @@
 
 ## 📌 Overview
 
-This repository contains a Bangla-language dataset designed for **fake news detection** tasks.
-The data has been collected from various online sources, including news websites and YouTube, and includes both **authentic and misleading content**.
-
-Each row represents a single news instance with its associated metadata and label.
+This repository contains Bangla news data for **fake news detection**.
+Total dataset size: **~5357 rows, 7 columns**
 
 ---
 
-## 🧱 Dataset Structure
+## 📂 Files
 
-| Column Name    | Description                                                        |
-| -------------- | ------------------------------------------------------------------ |
-| `title`        | Headline of the news article                                       |
-| `text`         | Full news content or video description (Bangla text)               |
-| `source`       | Source platform or publisher (e.g., website, YouTube channel)      |
-| `publish_date` | Publication date (format: MM/DD/YYYY; may be generated if missing) |
-| `category`     | News category (e.g., politics, entertainment, etc.)                |
-| `url`          | Original link to the content                                       |
-| `label`        | Target label (`fake` / `real` or `0` / `1`)                        |
+### `fake_raw.csv`
+
+Fake news dataset
+Columns: `title`, `text`, `source`, `publish_date`, `category`, `url`, `label` (1 = fake)
 
 ---
 
-## 📥 Data Collection
+### `real_raw.csv`
 
-- Data was collected using web scraping techniques from:
-  - Bangla news websites
-  - YouTube video titles and descriptions
-
-- The dataset includes:
-  - Real news content
-  - Fake, misleading, or satire-style content
+Real news dataset
+Columns: `title`, `text`, `source`, `publish_date`, `category`, `url`, `label` (0 = real)
 
 ---
 
-## 🧹 Raw Data Characteristics
+### `full_dataset.csv`
 
-Since the data is scraped from real-world sources, it may contain:
-
-- Duplicate or near-duplicate entries
-- Hashtags and promotional content
-- Mixed language (Bangla with English phrases)
-- Missing or synthetic `publish_date` values
-
-All text is encoded in **UTF-8**, ensuring Bangla text remains fully readable.
+Merged (real + fake) dataset
+Columns: `title`, `text`, `source`, `publish_date`, `category`, `url`, `label`
 
 ---
 
-## ⚙️ Preprocessing
+### `dl_dataset.csv`
 
-Typical preprocessing steps include:
-
-- Removing empty or invalid rows
-- Cleaning hashtags and boilerplate/disclaimer text
-- Normalizing whitespace and formatting
-- Deduplicating based on `title`, `text`, or `url`
-- Generating missing `publish_date` values
-- Shuffling the dataset to eliminate ordering bias
+Processed dataset for deep learning
+Columns: `title`, `text`, `label`
 
 ---
 
-## 📊 Use Cases
+## 🧹 Notes
 
-- Fake news detection (binary classification)
-- Bangla NLP research
-- Training deep learning models (e.g., transformer-based models, RNNs)
-
----
-
-## ⚠️ Limitations
-
-- Possible class imbalance
-- Source bias across labels
-- Noise from scraped content
-- Generated dates are not suitable for temporal analysis
+- Bangla text (UTF-8 encoded)
+- Basic cleaning applied (empty rows, duplicates, noise)
+- Dataset is shuffled
 
 ---
 
-## 📈 Dataset Size
+## 📊 Usage
 
-- ~2600+ samples (may vary after cleaning)
+Can be used for:
 
----
-
-## 📜 License
-
-This dataset is intended for **research and educational purposes only**.
+- Fake news detection
+- NLP / text classification
 
 ---
 
-## 🤝 Contribution
-
-Contributions are welcome! You can:
-
-- Improve data quality
-- Add new labeled samples
-- Enhance preprocessing
-
----
-
-⭐ If you find this dataset useful, consider starring the repository!
+⭐ Use for learning and research
