@@ -3,7 +3,7 @@
 ## 📌 Overview
 
 This repository contains Bangla news data for **fake news detection**.
-Total dataset size: **~5356 rows, 7 columns**
+Total dataset size: **~5355 rows, 7 columns**
 
 ---
 
@@ -12,14 +12,14 @@ Total dataset size: **~5356 rows, 7 columns**
 ### `fake_raw.csv`
 
 Fake news dataset
-Columns: `title`, `text`, `source`, `publish_date`, `category`, `url`, `label` (1 = fake)
+Columns: `title`, `text`, `source`, `publish_date`, `category`, `url`, `label`
 
 ---
 
 ### `real_raw.csv`
 
 Real news dataset
-Columns: `title`, `text`, `source`, `publish_date`, `category`, `url`, `label` (0 = real)
+Columns: `title`, `text`, `source`, `publish_date`, `category`, `url`, `label`
 
 ---
 
@@ -37,17 +37,22 @@ Columns: `title`, `text`, `label`
 
 ---
 
+## 🏷 Label Info
+
+- `0 = real`
+- `1 = fake`
+
+---
+
 ## 🧹 Notes
 
 - Bangla text (UTF-8 encoded)
-- Basic cleaning applied (empty rows, duplicates, noise)
+- Basic cleaning applied (empty rows, duplicates, noise removed)
 - Dataset is shuffled
 
 ---
 
 ## 📊 Usage
-
-Can be used for:
 
 - Fake news detection
 - NLP / text classification
