@@ -3,7 +3,7 @@
 ## 📌 Overview
 
 This repository contains Bangla news data for **fake news detection**.
-Total dataset size: **~5357 rows, 7 columns**
+Total dataset size: **~5356 rows, 7 columns**
 
 ---
 
